@@ -141,7 +141,7 @@ int main(void)
  	    {
  	        Servo_SetAngle(&htim3, TIM_CHANNEL_1, angle);
  	        Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180 - angle);
- 	        HAL_Delay(1);3
+ 	        HAL_Delay(1);4
  	    }
      /* USER CODE END WHILE */
 
