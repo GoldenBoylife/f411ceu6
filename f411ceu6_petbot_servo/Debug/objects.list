@@ -1,5 +1,8 @@
+"./App/bsp/bsp.o"
+"./App/bsp/servo/bsp_servo.o"
 "./App/src/ap.o"
 "./App/utils/esp01/esp01.o"
+"./App/utils/servo/servo.o"
 "./App/utils/uart/uart.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f4xx_hal_msp.o"

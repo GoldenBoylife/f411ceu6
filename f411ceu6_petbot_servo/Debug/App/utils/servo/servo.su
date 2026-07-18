@@ -1,0 +1,14 @@
+../App/utils/servo/servo.c:14:6:servoInit	32	static
+../App/utils/servo/servo.c:35:13:servoIsValidChannel	16	static
+../App/utils/servo/servo.c:40:17:servoClampAngle	16	static
+../App/utils/servo/servo.c:54:6:servoStart	16	static
+../App/utils/servo/servo.c:72:6:servoStop	16	static
+../App/utils/servo/servo.c:102:6:servoSetAngle	24	static
+../App/utils/servo/servo.c:140:6:servoSetPulseUs	24	static
+../App/utils/servo/servo.c:186:6:servoMove45	16	static
+../App/utils/servo/servo.c:192:6:servoMove65	16	static
+../App/utils/servo/servo.c:198:6:servoMoveCenter	16	static
+../App/utils/servo/servo.c:212:9:servoGetAngle	16	static
+../App/utils/servo/servo.c:223:6:servoIsStarted	16	static
+../App/utils/servo/servo.c:240:17:servoAngleToPulseUs	32	static
+../App/utils/servo/servo.c:281:17:servoPulseUsToTick	48	static

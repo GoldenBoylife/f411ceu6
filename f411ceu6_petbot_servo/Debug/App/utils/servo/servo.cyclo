@@ -1,0 +1,14 @@
+../App/utils/servo/servo.c:14:6:servoInit	5
+../App/utils/servo/servo.c:35:13:servoIsValidChannel	1
+../App/utils/servo/servo.c:40:17:servoClampAngle	3
+../App/utils/servo/servo.c:54:6:servoStart	5
+../App/utils/servo/servo.c:72:6:servoStop	5
+../App/utils/servo/servo.c:102:6:servoSetAngle	5
+../App/utils/servo/servo.c:140:6:servoSetPulseUs	9
+../App/utils/servo/servo.c:186:6:servoMove45	1
+../App/utils/servo/servo.c:192:6:servoMove65	1
+../App/utils/servo/servo.c:198:6:servoMoveCenter	2
+../App/utils/servo/servo.c:212:9:servoGetAngle	2
+../App/utils/servo/servo.c:223:6:servoIsStarted	2
+../App/utils/servo/servo.c:240:17:servoAngleToPulseUs	2
+../App/utils/servo/servo.c:281:17:servoPulseUsToTick	1

@@ -8,7 +8,8 @@
 #ifndef AP_H_
 #define AP_H_
 
-#include "utils/uart/uart.h"
+// #include "utils/uart/uart.h"
+#include "utils/servo/servo.h"
 
 void apInit();
 void apMain();

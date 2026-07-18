@@ -56,24 +56,24 @@ static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
-#define SERVO_MIN_US 500
-#define SERVO_CENTER_US 1500
-#define SERVO_MAX_US 2500
+// #define SERVO_MIN_US 500
+// #define SERVO_CENTER_US 1500
+// #define SERVO_MAX_US 2500
 
-static uint16_t ServoAngleToPulse(uint8_t angle)
-{
-	if(angle > 180){
-		angle = 180;
-	}
+// static uint16_t ServoAngleToPulse(uint8_t angle)
+// {
+// 	if(angle > 180){
+// 		angle = 180;
+// 	}
 
-	return SERVO_MIN_US + ((uint32_t)angle * (SERVO_MAX_US - SERVO_MIN_US)) /180;
-}
+// 	return SERVO_MIN_US + ((uint32_t)angle * (SERVO_MAX_US - SERVO_MIN_US)) /180;
+// }
 
-void Servo_SetAngle(TIM_HandleTypeDef *htim, uint32_t channel, uint8_t angle)
-{
-	uint16_t pulse = ServoAngleToPulse(angle);
-	__HAL_TIM_SET_COMPARE(htim, channel, pulse);
-}
+// void Servo_SetAngle(TIM_HandleTypeDef *htim, uint32_t channel, uint8_t angle)
+// {
+// 	uint16_t pulse = ServoAngleToPulse(angle);
+// 	__HAL_TIM_SET_COMPARE(htim, channel, pulse);
+// }
 
 
 /* USER CODE END PFP */
@@ -117,36 +117,36 @@ int main(void)
   MX_TIM3_Init();
 
   /* USER CODE BEGIN 2 */
-   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+  //  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  //  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
 
-   Servo_SetAngle(&htim3, TIM_CHANNEL_1, 90);
-   Servo_SetAngle(&htim3, TIM_CHANNEL_2, 90);
- //  apInit();
- //  apMain();
+  //  Servo_SetAngle(&htim3, TIM_CHANNEL_1, 90);
+  //  Servo_SetAngle(&htim3, TIM_CHANNEL_2, 90);
+  apInit();
+  apMain();
    /* USER CODE END 2 */
 
    /* Infinite loop */
    /* USER CODE BEGIN WHILE */
-   while (1)
-   {
- 	    for (int angle = 0; angle <= 180; angle += 1)
- 	    {
- 	        Servo_SetAngle(&htim3, TIM_CHANNEL_1, angle);
- 	        Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180 - angle);
- 	        HAL_Delay(1);
- 	    }
+  //  while (1)
+  //  {
+ 	//     for (int angle = 0; angle <= 180; angle += 1)
+ 	//     {
+ 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_1, angle);
+ 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180 - angle);
+ 	//         HAL_Delay(1);
+ 	//     }
 
- 	    for (int angle = 180; angle >= 0; angle -= 1)
- 	    {
- 	        Servo_SetAngle(&htim3, TIM_CHANNEL_1, angle);
- 	        Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180 - angle);
- 	        HAL_Delay(1);
- 	    }
+ 	//     for (int angle = 180; angle >= 0; angle -= 1)
+ 	//     {
+ 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_1, angle);
+ 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180 - angle);
+ 	//         HAL_Delay(1);
+ 	//     }
      /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+//  }
   /* USER CODE END 3 */
 }
 

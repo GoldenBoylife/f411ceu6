@@ -24,8 +24,11 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+App/bsp \
+App/bsp/servo \
 App/src \
 App/utils/esp01 \
+App/utils/servo \
 App/utils/uart \
 Core/Src \
 Core/Startup \

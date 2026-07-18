@@ -18,10 +18,23 @@
 #include <stdlib.h>
 
 #include <main.h>  // 꼭 필요.
-#define _USE_HW_UART
-#define 	UART_MAX_CH 2
-#define _DEF_UART_CH1 1
-#define _DEF_UART_CH2 2
 
+/* =========================================================
+ * UART
+ * ========================================================= */
+
+#define _USE_HW_UART
+#define 	_UART_MAX_CH 2
+#define _UART_CH1 1
+#define _UART_CH2 2
+
+
+/* =========================================================
+ * Servo
+ * ========================================================= */
+#define _USE_SERVO
+#define _SERVO_MAX_CH 2
+    #define _SERVO_CH0 0
+    #define _SERVO_CH1 1
 
 #endif /* INCLUDE_DEF_H_ */

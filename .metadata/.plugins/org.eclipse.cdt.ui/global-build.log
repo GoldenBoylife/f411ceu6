@@ -1,19 +1,20 @@
-12:00:07 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
+19:31:28 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
 make -j24 all 
+arm-none-eabi-gcc "../App/utils/servo/servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App" -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"App/utils/servo/servo.d" -MT"App/utils/servo/servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "App/utils/servo/servo.o"
 arm-none-eabi-gcc -o "f411ceu6_petbot_servo.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\GBdevelop\Workspace\stm32_ws\f411ceu6\f411ceu6_petbot_servo\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f411ceu6_petbot_servo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: f411ceu6_petbot_servo.elf
  
 arm-none-eabi-size  f411ceu6_petbot_servo.elf 
 arm-none-eabi-objdump -h -S f411ceu6_petbot_servo.elf  > "f411ceu6_petbot_servo.list"
-   text	   data	    bss	    dec	    hex	filename
-  10584	     12	   1788	  12384	   3060	f411ceu6_petbot_servo.elf
 arm-none-eabi-objcopy  -O ihex f411ceu6_petbot_servo.elf  "f411ceu6_petbot_servo.hex"
+   text	   data	    bss	    dec	    hex	filename
+  16820	     92	   2700	  19612	   4c9c	f411ceu6_petbot_servo.elf
 arm-none-eabi-objcopy  -O binary f411ceu6_petbot_servo.elf  "f411ceu6_petbot_servo.bin"
 Finished building: default.size.stdout
  
-Finished building: f411ceu6_petbot_servo.list
- 
-Finished building: f411ceu6_petbot_servo.bin
 Finished building: f411ceu6_petbot_servo.hex
+Finished building: f411ceu6_petbot_servo.bin
  
+ 
+Finished building: f411ceu6_petbot_servo.list
  
