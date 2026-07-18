@@ -1,0 +1,10 @@
+13:37:10 **** Build of configuration Debug for project f411ceu6_hm10 ****
+make -j24 all 
+arm-none-eabi-size  f411ceu6_hm10.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13876	     20	   1852	  15748	   3d84	f411ceu6_hm10.elf
+Finished building: default.size.stdout
+ 
+
+13:37:10 Build Finished. 0 errors, 0 warnings. (took 457ms)
+

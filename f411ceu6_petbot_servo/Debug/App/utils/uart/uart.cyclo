@@ -1,0 +1,6 @@
+../App/utils/uart/uart.c:28:6:uartInit	1
+../App/utils/uart/uart.c:41:10:uartWrite	5
+../App/utils/uart/uart.c:72:10:uartAvailable	3
+../App/utils/uart/uart.c:109:10:uartRead	5
+../App/utils/uart/uart.c:153:10:uartPrintf	2
+../App/utils/uart/uart.c:175:10:uartVPrintf	2

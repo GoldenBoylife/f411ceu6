@@ -1,0 +1,7 @@
+23:36:31 **** Build of configuration Default for project f411ceu6Format ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+23:36:31 Build Failed. 1 errors, 0 warnings. (took 165ms)
+

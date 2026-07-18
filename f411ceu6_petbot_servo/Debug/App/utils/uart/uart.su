@@ -1,0 +1,6 @@
+../App/utils/uart/uart.c:28:6:uartInit	8	static
+../App/utils/uart/uart.c:41:10:uartWrite	32	static
+../App/utils/uart/uart.c:72:10:uartAvailable	24	static
+../App/utils/uart/uart.c:109:10:uartRead	24	static
+../App/utils/uart/uart.c:153:10:uartPrintf	292	static
+../App/utils/uart/uart.c:175:10:uartVPrintf	288	static
