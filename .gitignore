@@ -1,0 +1,11 @@
+# STM32CubeIDE workspace metadata
+.metadata/
+
+# Build outputs
+#	Debug/
+#	Release/
+#	build/
+
+# Eclipse/CubeIDE cache
+*.pdom
+*.launch
