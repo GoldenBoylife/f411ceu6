@@ -56,24 +56,6 @@ static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
-// #define SERVO_MIN_US 500
-// #define SERVO_CENTER_US 1500
-// #define SERVO_MAX_US 2500
-
-// static uint16_t ServoAngleToPulse(uint8_t angle)
-// {
-// 	if(angle > 180){
-// 		angle = 180;
-// 	}
-
-// 	return SERVO_MIN_US + ((uint32_t)angle * (SERVO_MAX_US - SERVO_MIN_US)) /180;
-// }
-
-// void Servo_SetAngle(TIM_HandleTypeDef *htim, uint32_t channel, uint8_t angle)
-// {
-// 	uint16_t pulse = ServoAngleToPulse(angle);
-// 	__HAL_TIM_SET_COMPARE(htim, channel, pulse);
-// }
 
 
 /* USER CODE END PFP */
@@ -115,38 +97,18 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_TIM3_Init();
-
   /* USER CODE BEGIN 2 */
-  //  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  //  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
 
-  //  Servo_SetAngle(&htim3, TIM_CHANNEL_1, 90);
-  //  Servo_SetAngle(&htim3, TIM_CHANNEL_2, 90);
   apInit();
   apMain();
-   /* USER CODE END 2 */
+  /* USER CODE END 2 */
 
-   /* Infinite loop */
-   /* USER CODE BEGIN WHILE */
-  //  while (1)
-  //  {
- 	//     for (int angle = 0; angle <= 180; angle += 1)
- 	//     {
- 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_1, angle);
- 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180 - angle);
- 	//         HAL_Delay(1);
- 	//     }
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
 
- 	//     for (int angle = 180; angle >= 0; angle -= 1)
- 	//     {
- 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_1, angle);
- 	//         Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180 - angle);
- 	//         HAL_Delay(1);
- 	//     }
-     /* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//  }
   /* USER CODE END 3 */
 }
 
@@ -322,11 +284,29 @@ static void MX_USART2_UART_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, LED0_Pin|LED1_Pin|LCD_RST_Pin|LCD_DC_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LED0_Pin LED1_Pin LCD_RST_Pin LCD_DC_Pin */
+  GPIO_InitStruct.Pin = LED0_Pin|LED1_Pin|LCD_RST_Pin|LCD_DC_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : BTN1_Pin */
+  GPIO_InitStruct.Pin = BTN1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(BTN1_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
   /* USER CODE END MX_GPIO_Init_2 */
