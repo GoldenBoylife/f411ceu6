@@ -1,18 +1,22 @@
-10:55:46 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
+12:00:07 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
 make -j24 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App" -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:144:30: warning: statement with no effect [-Wunused-value]
-  144 |                 HAL_Delay(1);1
-      |                              ^
-../Core/Src/main.c:144:31: error: expected ';' before '}' token
-  144 |                 HAL_Delay(1);1
-      |                               ^
-      |                               ;
-  145 |             }
-      |             ~                  
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j24 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -o "f411ceu6_petbot_servo.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\GBdevelop\Workspace\stm32_ws\f411ceu6\f411ceu6_petbot_servo\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f411ceu6_petbot_servo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f411ceu6_petbot_servo.elf
+ 
+arm-none-eabi-size  f411ceu6_petbot_servo.elf 
+arm-none-eabi-objdump -h -S f411ceu6_petbot_servo.elf  > "f411ceu6_petbot_servo.list"
+   text	   data	    bss	    dec	    hex	filename
+  10584	     12	   1788	  12384	   3060	f411ceu6_petbot_servo.elf
+arm-none-eabi-objcopy  -O ihex f411ceu6_petbot_servo.elf  "f411ceu6_petbot_servo.hex"
+arm-none-eabi-objcopy  -O binary f411ceu6_petbot_servo.elf  "f411ceu6_petbot_servo.bin"
+Finished building: default.size.stdout
+ 
+Finished building: f411ceu6_petbot_servo.list
+ 
+Finished building: f411ceu6_petbot_servo.bin
+Finished building: f411ceu6_petbot_servo.hex
+ 
+ 
 
-10:55:46 Build Failed. 2 errors, 1 warnings. (took 500ms)
+12:00:07 Build Finished. 0 errors, 0 warnings. (took 695ms)
 

@@ -55,6 +55,12 @@ default.size.stdout \
 OBJDUMP_LIST += \
 f411ceu6_petbot_servo.list \
 
+OBJCOPY_HEX += \
+f411ceu6_petbot_servo.hex \
+
+OBJCOPY_BIN += \
+f411ceu6_petbot_servo.bin \
+
 
 # All Target
 all: main-build
@@ -78,12 +84,22 @@ f411ceu6_petbot_servo.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL
 	@echo 'Finished building: $@'
 	@echo ' '
 
+f411ceu6_petbot_servo.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "f411ceu6_petbot_servo.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+f411ceu6_petbot_servo.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "f411ceu6_petbot_servo.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) default.size.stdout f411ceu6_petbot_servo.elf f411ceu6_petbot_servo.list f411ceu6_petbot_servo.map
+	-$(RM) default.size.stdout f411ceu6_petbot_servo.bin f411ceu6_petbot_servo.elf f411ceu6_petbot_servo.hex f411ceu6_petbot_servo.list f411ceu6_petbot_servo.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
