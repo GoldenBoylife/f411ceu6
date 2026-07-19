@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 00000aba  00000000  00000000  000179b0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000180a4  00000000  00000000  0001846a  2**0
+ 16 .debug_macro  000180aa  00000000  00000000  0001846a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000125fa  00000000  00000000  0003050e  2**0
+ 17 .debug_line   000125fa  00000000  00000000  00030514  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008eeda  00000000  00000000  00042b08  2**0
+ 18 .debug_str    0008eef5  00000000  00000000  00042b0e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000d19e2  2**0
+ 19 .comment      00000043  00000000  00000000  000d1a03  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003d88  00000000  00000000  000d1a28  2**2
+ 20 .debug_frame  00003d88  00000000  00000000  000d1a48  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006d  00000000  00000000  000d57b0  2**0
+ 21 .debug_line_str 0000006d  00000000  00000000  000d57d0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -561,7 +561,7 @@ void apMain()
         #elif 1
         gpioWrite(_LED_CH_USER, true);
  8000648:	2101      	movs	r1, #1
- 800064a:	2001      	movs	r0, #1
+ 800064a:	2004      	movs	r0, #4
  800064c:	f000 f84c 	bl	80006e8 <gpioWrite>
 	{
  8000650:	bf00      	nop

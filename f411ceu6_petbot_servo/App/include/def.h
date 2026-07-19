@@ -43,7 +43,8 @@
 #define _USE_LED
 
 #define _LED_CH0			_GPIO_CH_LED0
-#define _LED_CH_USER		_GPIO_CH_LED1
+#define _LED_CH1			_GPIO_CH_LED1
+#define _LED_CH_USER		_GPIO_CH_LED_USER
 
 
 
