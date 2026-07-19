@@ -49,7 +49,7 @@ void apMain()
         servoMoveCenter(_SERVO_CH1);
 
         HAL_Delay(1000);
-        #elif 1
+        #elif 0
         if (gpioRead(_GPIO_CH_BTN_USER))
         {
             // gpioWrite(_GPIO_CH4, true);
@@ -61,10 +61,10 @@ void apMain()
         }
 
         HAL_Delay(10);
-        #elif 0
-        gpioWrite(_GPIO_CH4, true);
+        #elif 1
+        gpioWrite(_LED_CH_USER, true);
 		#elif 0
-        bool pressed = gpioRead(_GPIO_CH5);
+        bool pressed = gpioRead(_GPIO_CH_BTN_USER);
 
         uartPrintf(
             _UART_CH2,
