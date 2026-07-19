@@ -1,0 +1,7 @@
+../App/utils/gpio/gpio.c:18:6:gpioInit	6
+../App/utils/gpio/gpio.c:36:6:gpioWrite	3
+../App/utils/gpio/gpio.c:60:6:gpioRead	2
+../App/utils/gpio/gpio.c:73:6:gpioToggle	2
+../App/utils/gpio/gpio.c:89:14:gpioIsValidChannel	3
+../App/utils/gpio/gpio.c:98:23:gpioGetOnState	1
+../App/utils/gpio/gpio.c:108:23:gpioGetOffState	2

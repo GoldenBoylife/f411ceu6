@@ -24,7 +24,7 @@ typedef struct
 	GPIO_TypeDef *port;
 	uint16_t pin;
 
-	GPIO_PinState active_state;
+	GPIO_PinState on_state;
 }GPIO_CONFIG;
 
 
@@ -32,13 +32,12 @@ typedef struct
  * PUBLIC METHOD
  * ========================================================= */
 
-bool gpioInit(uint8_t ch, bool active);
+// bool gpioInit(const uint8_t ch, bool active);
+bool gpioInit(const GPIO_CONFIG *config, uint8_t config_count);
 bool gpioWrite(uint8_t ch, bool active);
 
 bool gpioRead(uint8_t ch);
 bool gpioToggle(uint8_t ch);
-
-
 #ifdef GPIO_PRIVATE
 /* =========================================================
  * PRIVATE TYPE
@@ -57,8 +56,9 @@ static uint8_t gpio_count_ = 0;
  * PRIVATE METHOD
  * ========================================================= */
 static bool gpioIsValidChannel(uint8_t ch);
-static GPIO_PinState gpioGetInactiveState(uint8_t ch);
-// 해당 gpio 채널의 비활성 전기 레벨을 구한느 함수
+static GPIO_PinState gpioGetOnState(uint8_t ch);
+static GPIO_PinState gpioGetOffState(uint8_t ch);
+  
 
 
 

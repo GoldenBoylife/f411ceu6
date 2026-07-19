@@ -8,6 +8,8 @@
 #ifndef BSP_GPIO_BSP_GPIO_H_
 #define BSP_GPIO_BSP_GPIO_H_
 
+#include "def.h"
+bool bspGpioInit(void);
 
 
 #endif /* BSP_GPIO_BSP_GPIO_H_ */

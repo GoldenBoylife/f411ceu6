@@ -30,6 +30,11 @@ void apInit()
 
     servoMoveCenter(PETBOT_SERVO_HEAD_CH);
     servoMoveCenter(PETBOT_SERVO_NECK_CH);
+
+
+    gpioWrite(_GPIO_CH0, false);
+    // gpioWrite(_GPIO_CH2, false);
+    // gpioWrite(_GPIO_CH3, false);
 }
 
 void apMain()
@@ -38,6 +43,7 @@ void apMain()
 
 	while(1)
 	{
+        #if 0
 		servoMove45(_SERVO_CH0);
 		servoMove45(_SERVO_CH1);
 
@@ -52,5 +58,17 @@ void apMain()
         servoMoveCenter(_SERVO_CH1);
 
         HAL_Delay(1000);
+        #elif 1
+        if (gpioRead(_GPIO_CH0))
+        {
+            gpioWrite(_GPIO_CH1, true);
+        }
+        else
+        {
+            gpioWrite(_GPIO_CH1, false);
+        }
+
+        HAL_Delay(10);
+        #endif 
 	}
 }

@@ -24,13 +24,15 @@
  * Servo
  * ========================================================= */
 #define _USE_GPIO
-#define _GPIO_MAX_CH 5
+#define _GPIO_MAX_CH 7
 
-#define GPIO_CH0 0
-#define GPIO_CH1 1
-#define GPIO_CH2 2
-#define GPIO_CH3 3
-#define GPIO_CH4 4
+#define _GPIO_CH0 0  //LED_USER
+#define _GPIO_CH1 1  //BTN_USER
+#define _GPIO_CH2 2  //BTN0
+#define _GPIO_CH3 3  //LED0
+#define _GPIO_CH4 4  //LED1
+#define _GPIO_CH5 5  //LED2
+#define _GPIO_CH5 6  //LED3
 
 
 /* =========================================================

@@ -19,6 +19,7 @@
  /*각 하드웨어 초기화*/
 bool bspInit(void)
 {
+    if(!bspGpioInit()) return false;
     if(!bspServoInit())	return false;
 //    bspLedInit();
 //    bspUartInit();

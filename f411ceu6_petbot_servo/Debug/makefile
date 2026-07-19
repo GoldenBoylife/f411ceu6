@@ -14,9 +14,11 @@ RM := rm -rf
 -include Core/Src/subdir.mk
 -include App/utils/uart/subdir.mk
 -include App/utils/servo/subdir.mk
+-include App/utils/gpio/subdir.mk
 -include App/utils/esp01/subdir.mk
 -include App/src/subdir.mk
 -include App/bsp/servo/subdir.mk
+-include App/bsp/gpio/subdir.mk
 -include App/bsp/subdir.mk
 -include objects.mk
 

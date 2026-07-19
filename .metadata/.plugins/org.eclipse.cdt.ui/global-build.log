@@ -1,6 +1,23 @@
-19:31:28 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
+12:49:58 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
 make -j24 all 
-arm-none-eabi-gcc "../App/utils/servo/servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App" -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"App/utils/servo/servo.d" -MT"App/utils/servo/servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "App/utils/servo/servo.o"
+arm-none-eabi-gcc "../App/utils/gpio/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App" -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"App/utils/gpio/gpio.d" -MT"App/utils/gpio/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "App/utils/gpio/gpio.o"
+arm-none-eabi-gcc "../App/bsp/gpio/bsp_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App" -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include" -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"App/bsp/gpio/bsp_gpio.d" -MT"App/bsp/gpio/bsp_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "App/bsp/gpio/bsp_gpio.o"
+In file included from ../App/utils/gpio/gpio.h:11,
+                 from ../App/utils/gpio/gpio.c:11:
+D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include/def.h:35: warning: "_GPIO_CH5" redefined
+   35 | #define _GPIO_CH5 6  //LED3
+      | 
+D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include/def.h:34: note: this is the location of the previous definition
+   34 | #define _GPIO_CH5 5  //LED2
+      | 
+In file included from ../App/bsp/gpio/bsp_gpio.h:11,
+                 from ../App/bsp/gpio/bsp_gpio.c:9:
+D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include/def.h:35: warning: "_GPIO_CH5" redefined
+   35 | #define _GPIO_CH5 6  //LED3
+      | 
+D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include/def.h:34: note: this is the location of the previous definition
+   34 | #define _GPIO_CH5 5  //LED2
+      | 
 arm-none-eabi-gcc -o "f411ceu6_petbot_servo.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\GBdevelop\Workspace\stm32_ws\f411ceu6\f411ceu6_petbot_servo\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f411ceu6_petbot_servo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: f411ceu6_petbot_servo.elf
  
@@ -8,13 +25,13 @@ arm-none-eabi-size  f411ceu6_petbot_servo.elf
 arm-none-eabi-objdump -h -S f411ceu6_petbot_servo.elf  > "f411ceu6_petbot_servo.list"
 arm-none-eabi-objcopy  -O ihex f411ceu6_petbot_servo.elf  "f411ceu6_petbot_servo.hex"
    text	   data	    bss	    dec	    hex	filename
-  16820	     92	   2700	  19612	   4c9c	f411ceu6_petbot_servo.elf
+  17752	     92	   2788	  20632	   5098	f411ceu6_petbot_servo.elf
 arm-none-eabi-objcopy  -O binary f411ceu6_petbot_servo.elf  "f411ceu6_petbot_servo.bin"
 Finished building: default.size.stdout
  
-Finished building: f411ceu6_petbot_servo.hex
-Finished building: f411ceu6_petbot_servo.bin
- 
- 
 Finished building: f411ceu6_petbot_servo.list
+ 
+Finished building: f411ceu6_petbot_servo.bin
+Finished building: f411ceu6_petbot_servo.hex
+ 
  
