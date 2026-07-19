@@ -26,13 +26,13 @@
 #define _USE_GPIO
 #define _GPIO_MAX_CH 7
 
-#define _GPIO_CH0 0  //LED_USER
-#define _GPIO_CH1 1  //BTN_USER
-#define _GPIO_CH2 2  //BTN0
-#define _GPIO_CH3 3  //LED0
-#define _GPIO_CH4 4  //LED1
-#define _GPIO_CH5 5  //LED2
-#define _GPIO_CH5 6  //LED3
+#define _GPIO_CH0          0   // LED0
+#define _GPIO_CH1          1   // LED1
+#define _GPIO_CH2          2   // LCD_RST
+#define _GPIO_CH3          3   // LCD_DC
+#define _GPIO_CH4          4   // LED_USER
+#define _GPIO_CH5          5   // BTN_USER
+#define _GPIO_CH6          6   // BTN0
 
 
 /* =========================================================
