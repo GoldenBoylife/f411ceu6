@@ -58,7 +58,7 @@ void apMain()
         servoMoveCenter(_SERVO_CH1);
 
         HAL_Delay(1000);
-        #elif 0
+        #elif 1
         if (gpioRead(_GPIO_CH5))
         {
             gpioWrite(_GPIO_CH4, true);
@@ -69,7 +69,7 @@ void apMain()
         }
 
         HAL_Delay(10);
-        #elif 1
+        #elif 0
         gpioWrite(_GPIO_CH4, true);
 
         #endif 
