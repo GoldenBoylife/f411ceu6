@@ -69,7 +69,7 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
     {
         .port       = BTN_USER_GPIO_Port,
         .pin        = BTN_USER_Pin,
-        .on_state   = GPIO_PIN_SET
+        .on_state   = GPIO_PIN_RESET
     },
 
     /* _DEF_GPIO_CH_BTN0

@@ -2569,8 +2569,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
  800121a:	2300      	movs	r3, #0
  800121c:	613b      	str	r3, [r7, #16]
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
- 800121e:	2302      	movs	r3, #2
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+ 800121e:	2301      	movs	r3, #1
  8001220:	617b      	str	r3, [r7, #20]
   HAL_GPIO_Init(BTN_USER_GPIO_Port, &GPIO_InitStruct);
  8001222:	f107 030c 	add.w	r3, r7, #12
