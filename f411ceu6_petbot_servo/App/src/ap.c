@@ -50,7 +50,7 @@ void apMain()
 
         HAL_Delay(1000);
         #elif 1
-        if (gpioRead(_GPIO_CH_BTN_USER))
+        if (btnRead(_BTN_CH_USER))
         {
             // gpioWrite(_GPIO_CH4, true);
             ledOn(_LED_CH_USER);

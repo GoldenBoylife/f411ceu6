@@ -2,6 +2,7 @@
 "./App/bsp/gpio/bsp_gpio.o"
 "./App/bsp/servo/bsp_servo.o"
 "./App/src/ap.o"
+"./App/utils/btn/btn.o"
 "./App/utils/esp01/esp01.o"
 "./App/utils/gpio/gpio.o"
 "./App/utils/led/led.o"

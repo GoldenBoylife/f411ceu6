@@ -17,6 +17,7 @@ RM := rm -rf
 -include App/utils/led/subdir.mk
 -include App/utils/gpio/subdir.mk
 -include App/utils/esp01/subdir.mk
+-include App/utils/btn/subdir.mk
 -include App/src/subdir.mk
 -include App/bsp/servo/subdir.mk
 -include App/bsp/gpio/subdir.mk

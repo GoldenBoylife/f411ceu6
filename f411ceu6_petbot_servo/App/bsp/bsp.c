@@ -13,6 +13,10 @@
 	#include "bsp/servo/bsp_servo.h"
 #endif
 
+#ifdef _USE_GPIO
+	#include "bsp/gpio/bsp_gpio.h"
+#endif
+
 
 
 
