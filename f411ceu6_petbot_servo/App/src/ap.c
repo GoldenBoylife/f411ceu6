@@ -59,13 +59,13 @@ void apMain()
 
         HAL_Delay(1000);
         #elif 1
-        if (gpioRead(_GPIO_CH1))
+        if (gpioRead(_GPIO_CH5))
         {
-            gpioWrite(_GPIO_CH0, true);
+            gpioWrite(_GPIO_CH4, true);
         }
         else
         {
-            gpioWrite(_GPIO_CH0, false);
+            gpioWrite(_GPIO_CH4, false);
         }
 
         HAL_Delay(10);
