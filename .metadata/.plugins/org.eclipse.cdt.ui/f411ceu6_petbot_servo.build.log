@@ -1,4 +1,4 @@
-12:53:27 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
+12:57:20 **** Incremental Build of configuration Debug for project f411ceu6_petbot_servo ****
 make -j24 all 
 arm-none-eabi-gcc "../App/src/ap.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App" -I"D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"App/src/ap.d" -MT"App/src/ap.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "App/src/ap.o"
 In file included from D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/utils/servo/servo.h:11,
@@ -23,7 +23,7 @@ D:/GBdevelop/Workspace/stm32_ws/f411ceu6/f411ceu6_petbot_servo/App/include/def.h
    42 |         uartPrintf(_UART_CH2,"123");
       |         ^~~~~~~~~~
 ../App/src/ap.c:62:13: warning: implicit declaration of function 'gpioRead' [-Wimplicit-function-declaration]
-   62 |         if (gpioRead(_GPIO_CH1))
+   62 |         if (gpioRead(_GPIO_CH5))
       |             ^~~~~~~~
 arm-none-eabi-gcc -o "f411ceu6_petbot_servo.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\GBdevelop\Workspace\stm32_ws\f411ceu6\f411ceu6_petbot_servo\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f411ceu6_petbot_servo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: f411ceu6_petbot_servo.elf
@@ -38,10 +38,10 @@ Finished building: default.size.stdout
  
 Finished building: f411ceu6_petbot_servo.hex
 Finished building: f411ceu6_petbot_servo.bin
- 
 Finished building: f411ceu6_petbot_servo.list
  
  
+ 
 
-12:53:28 Build Finished. 0 errors, 5 warnings. (took 819ms)
+12:57:21 Build Finished. 0 errors, 5 warnings. (took 860ms)
 

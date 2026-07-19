@@ -568,31 +568,31 @@ void apMain()
 
         HAL_Delay(1000);
         #elif 1
-        if (gpioRead(_GPIO_CH1))
- 8000654:	2001      	movs	r0, #1
+        if (gpioRead(_GPIO_CH5))
+ 8000654:	2006      	movs	r0, #6
  8000656:	f000 f8a3 	bl	80007a0 <gpioRead>
  800065a:	4603      	mov	r3, r0
  800065c:	2b00      	cmp	r3, #0
  800065e:	d004      	beq.n	800066a <apMain+0x22>
         {
-            gpioWrite(_GPIO_CH0, true);
+            gpioWrite(_GPIO_CH4, true);
  8000660:	2101      	movs	r1, #1
- 8000662:	2000      	movs	r0, #0
+ 8000662:	2004      	movs	r0, #4
  8000664:	f000 f85c 	bl	8000720 <gpioWrite>
  8000668:	e003      	b.n	8000672 <apMain+0x2a>
         }
         else
         {
-            gpioWrite(_GPIO_CH0, false);
+            gpioWrite(_GPIO_CH4, false);
  800066a:	2100      	movs	r1, #0
- 800066c:	2000      	movs	r0, #0
+ 800066c:	2004      	movs	r0, #4
  800066e:	f000 f857 	bl	8000720 <gpioWrite>
         }
 
         HAL_Delay(10);
  8000672:	200a      	movs	r0, #10
  8000674:	f001 f818 	bl	80016a8 <HAL_Delay>
-        if (gpioRead(_GPIO_CH1))
+        if (gpioRead(_GPIO_CH5))
  8000678:	e7ec      	b.n	8000654 <apMain+0xc>
  800067a:	bf00      	nop
  800067c:	08004490 	.word	0x08004490
