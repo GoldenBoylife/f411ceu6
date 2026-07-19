@@ -32,8 +32,7 @@ typedef struct
  * PUBLIC METHOD
  * ========================================================= */
 
-// bool gpioInit(const uint8_t ch, bool active);
-bool gpioInit(const GPIO_CONFIG *config, uint8_t config_count);
+bool gpioInit(const GPIO_CONFIG *config);
 bool gpioWrite(uint8_t ch, bool active);
 
 bool gpioRead(uint8_t ch);
@@ -49,7 +48,6 @@ typedef struct
 } GPIO_INFO;
 
 static GPIO_INFO gpio_info_[_GPIO_MAX_CH];
-static uint8_t gpio_count_ = 0;
 
 
 /* =========================================================

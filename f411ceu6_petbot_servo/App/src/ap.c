@@ -9,15 +9,10 @@
 #include "def.h"
 #include "app_config.h"
 
-
 #include "bsp/bsp.h"
 
-
-//char api[30]="/data";
-//char api_key[30] = "GGGG";
-//
-//uint8_t f1;
-//uint32_t f2;
+#include "utils/servo/servo.h"
+#include "utils/led/led.h"
 
 
 void apInit()
@@ -31,10 +26,6 @@ void apInit()
     servoMoveCenter(PETBOT_SERVO_HEAD_CH);
     servoMoveCenter(PETBOT_SERVO_NECK_CH);
 
-
-    gpioWrite(_GPIO_CH0, false);
-    // gpioWrite(_GPIO_CH2, false);
-    // gpioWrite(_GPIO_CH3, false);
 }
 
 void apMain()
@@ -59,13 +50,14 @@ void apMain()
 
         HAL_Delay(1000);
         #elif 1
-        if (gpioRead(_GPIO_CH5))
+        if (gpioRead(_GPIO_CH_BTN_USER))
         {
-            gpioWrite(_GPIO_CH4, true);
+            // gpioWrite(_GPIO_CH4, true);
+            ledOn(_LED_CH_USER);
         }
         else
         {
-            gpioWrite(_GPIO_CH4, false);
+            ledOff(_LED_CH_USER);
         }
 
         HAL_Delay(10);

@@ -9,12 +9,23 @@
 #include "bsp_gpio.h"
 #include "utils/gpio/gpio.h"
 
+//c의 지정초기화자를 사용해서 
+/* c의 지정초기화자를 사용해서 
+    [_GPIO_CH_LED0] =
+    {
+        .port     = LED0_GPIO_Port,
+        .pin      = LED0_Pin,
+        .on_state = GPIO_PIN_SET
+    },
+    형태가 가능하고, 배열의 특정 인덱스를 지정해서 초기화한다.
+*/
 static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
 {
     /* _DEF_GPIO_CH_LED0
      * PB3
      * 외부 LED, Active High로 우선 설정
      */
+    [_GPIO_CH_LED0] =
     {
         .port       = LED0_GPIO_Port,
         .pin        = LED0_Pin,
@@ -25,6 +36,7 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
      * PB4
      * 외부 LED, Active High로 우선 설정
      */
+    [_GPIO_CH_LED1] = 
     {
         .port       = LED1_GPIO_Port,
         .pin        = LED1_Pin,
@@ -35,6 +47,7 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
      * PB5
      * LCD Reset은 보통 Active Low
      */
+    [_GPIO_CH_LCD_RST] =
     {
         .port       = LCD_RST_GPIO_Port,
         .pin        = LCD_RST_Pin,
@@ -46,6 +59,7 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
      * true를 Data Mode로 사용
      * SET = Data, RESET = Command
      */
+    [_GPIO_CH_LCD_DC]  =
     {
         .port       = LCD_DC_GPIO_Port,
         .pin        = LCD_DC_Pin,
@@ -56,6 +70,7 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
      * PC13 실장 LED
      * GND 방향으로 전류가 흘러야 켜지는 Active Low
      */
+    [_GPIO_CH_LED_USER] =
     {
         .port       = LED_USER_GPIO_Port,
         .pin        = LED_USER_Pin,
@@ -66,6 +81,7 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
      * PA0, Pull-down
      * 평소 Low, 누르면 High라고 가정
      */
+    [_GPIO_CH_BTN_USER] = 
     {
         .port       = BTN_USER_GPIO_Port,
         .pin        = BTN_USER_Pin,
@@ -76,6 +92,7 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
      * PB7, Pull-down
      * 평소 Low, 누르면 High
      */
+    [_GPIO_CH_BTN0] =
     {
         .port       = BTN0_GPIO_Port,
         .pin        = BTN0_Pin,
@@ -86,5 +103,5 @@ static const GPIO_CONFIG gpio_config[_GPIO_MAX_CH] =
 
 bool bspGpioInit(void)
 {
-	return gpioInit(gpio_config, _GPIO_MAX_CH);
+	return gpioInit(gpio_config);
 }

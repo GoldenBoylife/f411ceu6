@@ -4,6 +4,7 @@
 "./App/src/ap.o"
 "./App/utils/esp01/esp01.o"
 "./App/utils/gpio/gpio.o"
+"./App/utils/led/led.o"
 "./App/utils/servo/servo.o"
 "./App/utils/uart/uart.o"
 "./Core/Src/main.o"

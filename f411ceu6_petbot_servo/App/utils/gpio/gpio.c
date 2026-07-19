@@ -15,17 +15,18 @@
  * PUBLIC MEMBER FUNC
  * ========================================================= */
 
-bool gpioInit(const GPIO_CONFIG *config, uint8_t config_count)
+bool gpioInit(const GPIO_CONFIG *config)
 {
 	if(config == NULL) 	return false;
 
-	if(config_count == 0 || config_count > _GPIO_MAX_CH)	return false;
-
-	gpio_count_ = config_count;
-
-	for(uint8_t ch = 0 ; ch < gpio_count_; ch++)
+	for(uint8_t ch = 0 ; ch < _GPIO_MAX_CH; ch++)
 	{
-		if(config[ch].port == NULL)	return false;
+		/*중간에 비어 있는 ch일수도 있으니까. */
+		gpio_info_[ch].initialized = false;
+		if(config[ch].port == NULL)	
+		{
+			continue;
+		}
 		gpio_info_[ch].config = config[ch];
 		gpio_info_[ch].initialized = true;
 	}
@@ -88,7 +89,7 @@ bool gpioToggle(uint8_t ch)
 
  static bool gpioIsValidChannel(uint8_t ch) 
  {
-	if(ch >= gpio_count_)	return false;
+	if(ch >= _GPIO_MAX_CH)	return false;
 
 	if(!gpio_info_[ch].initialized)	return false;
 

@@ -30,6 +30,7 @@ App/bsp/servo \
 App/src \
 App/utils/esp01 \
 App/utils/gpio \
+App/utils/led \
 App/utils/servo \
 App/utils/uart \
 Core/Src \
